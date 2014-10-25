@@ -1,0 +1,52 @@
+<idea-plugin version="2">
+  <id>com.xpc.plugins.SearchSelected</id>
+  <name>SearchSelected</name>
+  <version>1.0</version>
+  <vendor email="robert.john.edgar@gmail.com">xpc</vendor>
+
+  <description><![CDATA[
+      Search the Mozilla Developer Network or Google using the currently selected text.<br>
+      <em>Use ctrl+shift+m or ctrl+shift+g to search selected text</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Initial Commit.<br>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products -->
+  <depends>com.intellij.modules.lang</depends>
+
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+      <action id="SearchSelectedM" class="com.xpc.plugins.SearchSelected" text="Search MDN"
+              description="Search MDN with Selected Text">
+          <add-to-group group-id="EditorActions" anchor="last"/>
+          <keyboard-shortcut keymap="$default" first-keystroke="alt M"/>
+      </action>
+      <action id="SearchSelectedG" class="com.xpc.plugins.SearchSelected" text="Search Google"
+              description="Search Google with Selected Text">
+          <add-to-group group-id="EditorActions" anchor="last"/>
+          <keyboard-shortcut keymap="$default" first-keystroke="alt G"/>
+      </action>
+  </actions>
+
+</idea-plugin>
